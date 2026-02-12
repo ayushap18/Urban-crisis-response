@@ -1,65 +1,19 @@
 # Urban Crisis Response Dashboard 🚨
 
-An AI-powered real-time command center for managing urban emergencies. This dashboard leverages **Google Gemini** for tactical analysis, **Google Maps** for geospatial visualization, and the full **Firebase Suite** for backend infrastructure.
+An AI-powered real-time command center for managing urban emergencies — built with **Google Gemini**, **Google Maps**, and the full **Firebase Suite**.
 
 ![Status](https://img.shields.io/badge/Status-Production_Ready-green) ![AI](https://img.shields.io/badge/AI-Gemini_Flash_%26_Pro-purple) ![Stack](https://img.shields.io/badge/Stack-Firebase_%2B_React-orange)
 
-## 💎 Google Services Integration
+## 💎 Google Services (6 Integrations)
 
-This project achieves deep integration with **6 Key Google Technologies** to deliver a robust crisis management solution:
-
-### 1. 🧠 Google Gemini API (`@google/genai`)
-- **Tactical Analysis**: Uses `gemini-3-flash-preview` to generate instant summaries, hazard assessments, and unit recommendations for every incident.
-- **Pattern Recognition**: Uses `gemini-3-pro-preview` to analyze the entire dataset, identifying hotspots and predicting future risks based on historical trends.
-
-### 2. 🗺️ Google Maps Platform
-- **Visualization**: Interactive map rendering via the **Maps JavaScript API**.
-- **Logistics**: Real-time routing and ETA calculations for emergency vehicles using the **Directions Service**.
-
-### 3. 🔐 Firebase Authentication
-- **Identity**: Secure **Google Sign-In** integration allows dispatchers to log in securely.
-- **Session Management**: Persists dispatcher state and tracks active personnel.
-
-### 4. 🔥 Cloud Firestore
-- **Real-time Sync**: Replaces polling with live listeners. When a new incident occurs or a unit is dispatched, all connected dashboards update instantly (sub-100ms latency).
-- **Data Persistence**: Stores incidents, dispatcher logs, and unit statuses.
-
-### 5. ☁️ Cloud Storage for Firebase
-- **Evidence Management**: Allows dispatchers to upload and store high-resolution images and documents (PDFs) related to incidents.
-- **Secure Access**: Generates secure download URLs for evidence sharing.
-
-### 6. 📊 Google Analytics 4
-- **Usage Tracking**: Monitors key metrics such as incident views, AI analysis requests, and dispatch effectiveness.
-
----
-
-## 🏗 Architecture
-
-```mermaid
-graph TD
-    User[Dispatcher] --> UI[React Dashboard]
-    
-    subgraph "Frontend Layer"
-        UI --> Auth[Auth Context]
-        UI --> Maps[Google Maps View]
-        UI --> IDB[IndexedDB (Offline Cache)]
-    end
-    
-    subgraph "Google Cloud / Firebase"
-        Auth --> FB_Auth[Firebase Auth]
-        UI --> Firestore[Cloud Firestore]
-        UI --> Storage[Cloud Storage]
-        UI --> Analytics[Google Analytics 4]
-    end
-    
-    subgraph "AI Layer"
-        UI --> Gemini[Gemini Service]
-        Gemini --> Flash[Gemini Flash (Real-time)]
-        Gemini --> Pro[Gemini Pro (Patterns)]
-    end
-    
-    Firestore <--> IDB
-```
+| Service | Usage |
+|---------|-------|
+| **Gemini API** | Tactical analysis (Flash) + pattern recognition (Pro) |
+| **Google Maps** | Interactive map, Directions API routing & ETA |
+| **Firebase Auth** | Google Sign-In, session persistence |
+| **Cloud Firestore** | Real-time incident sync (sub-100ms) |
+| **Cloud Storage** | Evidence upload — images, PDFs, secure URLs |
+| **Google Analytics 4** | Custom event tracking & usage metrics |
 
 ## 🚀 Setup & Installation
 
@@ -208,13 +162,13 @@ Every line of code in this project was generated through carefully crafted promp
 
 <table>
 <tr>
-<td align="center"><b>Phase 3 — Testing, Optimization & Deployment</b></td>
+<td align="center"><b>Phase 3 — Comparing Services from AlertAid</b></td>
 </tr>
 <tr>
-<td><img src="photos/08-prompt-step3.png" alt="Prompt Phase 3" width="400"/></td>
+<td><img src="photos/07-comapring%20services%20from%20alertaid.png" alt="Comparing services from AlertAid" width="400"/></td>
 </tr>
 <tr>
-<td><em>Prompts for: Jest/Cypress tests, performance tuning, Vercel deployment, documentation</em></td>
+<td><em>Side-by-side comparison of services and capabilities vs AlertAid</em></td>
 </tr>
 </table>
 
