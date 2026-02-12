@@ -1,0 +1,7 @@
+{
+  "name": "Urban Crisis Response",
+  "description": "Real-time emergency dispatch dashboard powered by Gemini AI for incident analysis and tactical response suggestions.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

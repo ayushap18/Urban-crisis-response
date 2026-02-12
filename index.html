@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Crisis Response Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gray: {
+                900: '#0f172a',
+                800: '#1e293b',
+                700: '#334155',
+              },
+              alert: {
+                high: '#ef4444',
+                medium: '#f59e0b',
+                low: '#3b82f6',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* GLOBAL FOCUS INDICATOR FOR ACCESSIBILITY */
+      *:focus-visible {
+        outline: 2px solid #3b82f6; /* Blue-500 */
+        outline-offset: 2px;
+        z-index: 50;
+      }
+
+      /* HIGH CONTRAST MODE OVERRIDES */
+      body.high-contrast {
+        --tw-bg-opacity: 1 !important;
+        background-color: #000000 !important;
+        color: #ffffff !important;
+      }
+      
+      body.high-contrast * {
+        border-color: #ffffff !important;
+      }
+
+      body.high-contrast .bg-slate-900, 
+      body.high-contrast .bg-slate-950,
+      body.high-contrast .bg-slate-800,
+      body.high-contrast .bg-slate-700 {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border: 1px solid #ffffff;
+      }
+
+      body.high-contrast .text-slate-400,
+      body.high-contrast .text-slate-500 {
+        color: #ffff00 !important; /* Yellow for secondary text */
+      }
+
+      body.high-contrast button {
+        background-color: #000000 !important;
+        border: 2px solid #ffffff !important;
+        color: #ffffff !important;
+        font-weight: bold;
+      }
+
+      body.high-contrast button:hover,
+      body.high-contrast button:focus {
+        background-color: #ffff00 !important;
+        color: #000000 !important;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react": "https://esm.sh/react@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0?external=react,react-dom",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-query": "https://esm.sh/react-query@^3.39.3?external=react,react-dom",
+    "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@4.29.5?external=react,react-dom",
+    "@googlemaps/react-wrapper": "https://esm.sh/@googlemaps/react-wrapper@^1.2.0?external=react,react-dom",
+    "react-window": "https://esm.sh/react-window@1.8.10?external=react,react-dom",
+    "@testing-library/react": "https://esm.sh/@testing-library/react@^16.3.2",
+    "@testing-library/jest-dom": "https://esm.sh/@testing-library/jest-dom@^6.9.1",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "web-vitals": "https://esm.sh/web-vitals@^5.1.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js",
+    "firebase/storage": "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js",
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js",
+    "firebase/": "https://esm.sh/firebase@^12.8.0/",
+    "@jest/globals": "https://esm.sh/@jest/globals@^30.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-950 text-slate-200 antialiased overflow-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
